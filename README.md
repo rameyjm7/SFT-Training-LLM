@@ -4,6 +4,8 @@
 **Team Members:** Mack Werner, Gary Ruppert, BJ Janson, Jacob Ramey*  
 *Equal Contributors
 
+See our final report here: https://github.com/rameyjm7/SFT-Training-LLM/blob/main/SFT%20Training%20LLM%20Project%20Report.pdf
+
 ---
 
 ## 📘 Overview
