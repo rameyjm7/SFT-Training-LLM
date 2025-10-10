@@ -1,0 +1,29 @@
+INFO 10-06 08:52:33 [__init__.py:241] Automatically detected platform cuda.
+INFO 10-06 08:53:39 [__init__.py:241] Automatically detected platform cuda.
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:53:41 [core.py:636] Waiting for init message from front-end.
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:53:41 [core.py:74] Initializing a V1 LLM engine (v0.10.1.1) with config: model='/home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000', speculative_config=None, tokenizer='/home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000', skip_tokenizer_init=False, tokenizer_mode=auto, revision=main, override_neuron_config={}, tokenizer_revision=main, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, decoding_config=DecodingConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=1234, served_model_name=/home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, pooler_config=None, compilation_config={"level":0,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":null,"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":0,"use_cudagraph":true,"cudagraph_num_of_warmups":0,"cudagraph_capture_sizes":[],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"pass_config":{},"max_capture_size":0,"local_cache_dir":null}
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:53:47 [parallel_state.py:1134] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_0 pid=1887365)[0;0m WARNING 10-06 08:53:47 [topk_topp_sampler.py:61] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:53:47 [gpu_model_runner.py:1953] Starting to load model /home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000...
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:53:48 [gpu_model_runner.py:1985] Loading model from scratch...
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:53:48 [cuda.py:328] Using Flash Attention backend on V1 engine.
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:54:00 [default_loader.py:262] Loading weights took 11.15 seconds
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:54:00 [gpu_model_runner.py:2007] Model loading took 5.7916 GiB and 12.024382 seconds
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:54:03 [gpu_worker.py:276] Available KV cache memory: 126.25 GiB
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:54:03 [kv_cache_utils.py:849] GPU KV cache size: 3,677,264 tokens
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:54:03 [kv_cache_utils.py:853] Maximum concurrency for 32,768 tokens per request: 112.22x
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:54:03 [core.py:214] init engine (profile, create kv cache, warmup model) took 3.04 seconds
+[1;36m(EngineCore_0 pid=1887365)[0;0m INFO 10-06 08:54:04 [__init__.py:3565] Cudagraph is disabled under eager mode
+timeout occurred: alarm went off
+|            Task             |Version|      Metric      |Value |   |Stderr|
+|-----------------------------|-------|------------------|-----:|---|-----:|
+|all                          |       |pass@k_with_k     |0.1000|±  |0.0557|
+|                             |       |pass@k_with_k&n   |0.3990|±  |0.0381|
+|                             |       |gpqa_pass@k_with_k|0.3131|±  |0.0330|
+|                             |       |codegen_pass@1:16 |0.0970|±  |0.0181|
+|extended:lcb:codegeneration:0|       |codegen_pass@1:16 |0.0970|±  |0.0181|
+|lighteval:aime24:0           |       |pass@k_with_k     |0.1000|±  |0.0557|
+|lighteval:aime25:0           |       |pass@k_with_k&n   |0.1000|±  |0.0557|
+|lighteval:gpqa:diamond:0     |       |gpqa_pass@k_with_k|0.3131|±  |0.0330|
+|lighteval:math_500:0         |       |pass@k_with_k&n   |0.6980|±  |0.0206|
+

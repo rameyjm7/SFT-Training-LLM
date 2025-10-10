@@ -1,0 +1,139 @@
+INFO 10-06 06:43:37 [__init__.py:241] Automatically detected platform cuda.
+INFO 10-06 06:44:47 [__init__.py:241] Automatically detected platform cuda.
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:44:49 [core.py:636] Waiting for init message from front-end.
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:44:49 [core.py:74] Initializing a V1 LLM engine (v0.10.1.1) with config: model='/home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000', speculative_config=None, tokenizer='/home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000', skip_tokenizer_init=False, tokenizer_mode=auto, revision=main, override_neuron_config={}, tokenizer_revision=main, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, decoding_config=DecodingConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=1234, served_model_name=/home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, pooler_config=None, compilation_config={"level":0,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":null,"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":0,"use_cudagraph":true,"cudagraph_num_of_warmups":0,"cudagraph_capture_sizes":[],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"pass_config":{},"max_capture_size":0,"local_cache_dir":null}
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:44:56 [parallel_state.py:1134] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_0 pid=3657163)[0;0m WARNING 10-06 06:44:57 [topk_topp_sampler.py:61] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:44:57 [gpu_model_runner.py:1953] Starting to load model /home/bjanson/projects/P1/LLaMA-Factory/logs/qwen25_3b_instruct_h200/checkpoint-6000...
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:44:57 [gpu_model_runner.py:1985] Loading model from scratch...
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:44:58 [cuda.py:328] Using Flash Attention backend on V1 engine.
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:45:20 [default_loader.py:262] Loading weights took 21.58 seconds
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:45:20 [gpu_model_runner.py:2007] Model loading took 5.7916 GiB and 22.521095 seconds
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:45:24 [gpu_worker.py:276] Available KV cache memory: 56.89 GiB
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:45:24 [kv_cache_utils.py:849] GPU KV cache size: 1,656,992 tokens
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:45:24 [kv_cache_utils.py:853] Maximum concurrency for 32,768 tokens per request: 50.57x
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:45:24 [core.py:214] init engine (profile, create kv cache, warmup model) took 3.76 seconds
+[1;36m(EngineCore_0 pid=3657163)[0;0m INFO 10-06 06:45:24 [__init__.py:3565] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_0 pid=3657163)[0;0m WARNING 10-06 06:51:44 [cudagraph_dispatcher.py:101] cudagraph dispatching keys are not initialized. No cudagraph will be used.
+|                            Task                            |Version|   Metric    |Value |   |Stderr|
+|------------------------------------------------------------|-------|-------------|-----:|---|-----:|
+|all                                                         |       |pass@k_with_k|0.6430|±  |0.0457|
+|                                                            |       |acc          |0.4949|±  |0.0482|
+|lighteval:mmlu_redux_2:_average:0                           |       |pass@k_with_k|0.6430|±  |0.0457|
+|                                                            |       |acc          |0.4949|±  |0.0482|
+|lighteval:mmlu_redux_2:abstract_algebra:0                   |       |pass@k_with_k|0.3200|±  |0.0469|
+|                                                            |       |acc          |0.2400|±  |0.0429|
+|lighteval:mmlu_redux_2:anatomy:0                            |       |pass@k_with_k|0.5900|±  |0.0494|
+|                                                            |       |acc          |0.5400|±  |0.0501|
+|lighteval:mmlu_redux_2:astronomy:0                          |       |pass@k_with_k|0.7300|±  |0.0446|
+|                                                            |       |acc          |0.5100|±  |0.0502|
+|lighteval:mmlu_redux_2:business_ethics:0                    |       |pass@k_with_k|0.6400|±  |0.0482|
+|                                                            |       |acc          |0.7200|±  |0.0451|
+|lighteval:mmlu_redux_2:clinical_knowledge:0                 |       |pass@k_with_k|0.7100|±  |0.0456|
+|                                                            |       |acc          |0.5800|±  |0.0496|
+|lighteval:mmlu_redux_2:college_biology:0                    |       |pass@k_with_k|0.7700|±  |0.0423|
+|                                                            |       |acc          |0.5900|±  |0.0494|
+|lighteval:mmlu_redux_2:college_chemistry:0                  |       |pass@k_with_k|0.4200|±  |0.0496|
+|                                                            |       |acc          |0.3300|±  |0.0473|
+|lighteval:mmlu_redux_2:college_computer_science:0           |       |pass@k_with_k|0.5300|±  |0.0502|
+|                                                            |       |acc          |0.3800|±  |0.0488|
+|lighteval:mmlu_redux_2:college_mathematics:0                |       |pass@k_with_k|0.3300|±  |0.0473|
+|                                                            |       |acc          |0.2300|±  |0.0423|
+|lighteval:mmlu_redux_2:college_medicine:0                   |       |pass@k_with_k|0.7000|±  |0.0461|
+|                                                            |       |acc          |0.5200|±  |0.0502|
+|lighteval:mmlu_redux_2:college_physics:0                    |       |pass@k_with_k|0.5400|±  |0.0501|
+|                                                            |       |acc          |0.3200|±  |0.0469|
+|lighteval:mmlu_redux_2:computer_security:0                  |       |pass@k_with_k|0.6800|±  |0.0469|
+|                                                            |       |acc          |0.5500|±  |0.0500|
+|lighteval:mmlu_redux_2:conceptual_physics:0                 |       |pass@k_with_k|0.6600|±  |0.0476|
+|                                                            |       |acc          |0.4700|±  |0.0502|
+|lighteval:mmlu_redux_2:econometrics:0                       |       |pass@k_with_k|0.4300|±  |0.0498|
+|                                                            |       |acc          |0.3100|±  |0.0465|
+|lighteval:mmlu_redux_2:electrical_engineering:0             |       |pass@k_with_k|0.5600|±  |0.0499|
+|                                                            |       |acc          |0.5100|±  |0.0502|
+|lighteval:mmlu_redux_2:elementary_mathematics:0             |       |pass@k_with_k|0.6300|±  |0.0485|
+|                                                            |       |acc          |0.3200|±  |0.0469|
+|lighteval:mmlu_redux_2:formal_logic:0                       |       |pass@k_with_k|0.5600|±  |0.0499|
+|                                                            |       |acc          |0.3900|±  |0.0490|
+|lighteval:mmlu_redux_2:global_facts:0                       |       |pass@k_with_k|0.4300|±  |0.0498|
+|                                                            |       |acc          |0.2600|±  |0.0441|
+|lighteval:mmlu_redux_2:high_school_biology:0                |       |pass@k_with_k|0.7500|±  |0.0435|
+|                                                            |       |acc          |0.5700|±  |0.0498|
+|lighteval:mmlu_redux_2:high_school_chemistry:0              |       |pass@k_with_k|0.5800|±  |0.0496|
+|                                                            |       |acc          |0.4100|±  |0.0494|
+|lighteval:mmlu_redux_2:high_school_computer_science:0       |       |pass@k_with_k|0.7800|±  |0.0416|
+|                                                            |       |acc          |0.4300|±  |0.0498|
+|lighteval:mmlu_redux_2:high_school_european_history:0       |       |pass@k_with_k|0.8000|±  |0.0402|
+|                                                            |       |acc          |0.5300|±  |0.0502|
+|lighteval:mmlu_redux_2:high_school_geography:0              |       |pass@k_with_k|0.7200|±  |0.0451|
+|                                                            |       |acc          |0.5800|±  |0.0496|
+|lighteval:mmlu_redux_2:high_school_government_and_politics:0|       |pass@k_with_k|0.8300|±  |0.0378|
+|                                                            |       |acc          |0.6500|±  |0.0479|
+|lighteval:mmlu_redux_2:high_school_macroeconomics:0         |       |pass@k_with_k|0.6600|±  |0.0476|
+|                                                            |       |acc          |0.4500|±  |0.0500|
+|lighteval:mmlu_redux_2:high_school_mathematics:0            |       |pass@k_with_k|0.3100|±  |0.0465|
+|                                                            |       |acc          |0.2700|±  |0.0446|
+|lighteval:mmlu_redux_2:high_school_microeconomics:0         |       |pass@k_with_k|0.7900|±  |0.0409|
+|                                                            |       |acc          |0.6100|±  |0.0490|
+|lighteval:mmlu_redux_2:high_school_physics:0                |       |pass@k_with_k|0.5200|±  |0.0502|
+|                                                            |       |acc          |0.2600|±  |0.0441|
+|lighteval:mmlu_redux_2:high_school_psychology:0             |       |pass@k_with_k|0.8200|±  |0.0386|
+|                                                            |       |acc          |0.7400|±  |0.0441|
+|lighteval:mmlu_redux_2:high_school_statistics:0             |       |pass@k_with_k|0.6500|±  |0.0479|
+|                                                            |       |acc          |0.4000|±  |0.0492|
+|lighteval:mmlu_redux_2:high_school_us_history:0             |       |pass@k_with_k|0.8400|±  |0.0368|
+|                                                            |       |acc          |0.4700|±  |0.0502|
+|lighteval:mmlu_redux_2:high_school_world_history:0          |       |pass@k_with_k|0.7700|±  |0.0423|
+|                                                            |       |acc          |0.4800|±  |0.0502|
+|lighteval:mmlu_redux_2:human_aging:0                        |       |pass@k_with_k|0.6500|±  |0.0479|
+|                                                            |       |acc          |0.4400|±  |0.0499|
+|lighteval:mmlu_redux_2:human_sexuality:0                    |       |pass@k_with_k|0.7200|±  |0.0451|
+|                                                            |       |acc          |0.6300|±  |0.0485|
+|lighteval:mmlu_redux_2:international_law:0                  |       |pass@k_with_k|0.7000|±  |0.0461|
+|                                                            |       |acc          |0.6400|±  |0.0482|
+|lighteval:mmlu_redux_2:jurisprudence:0                      |       |pass@k_with_k|0.7500|±  |0.0435|
+|                                                            |       |acc          |0.5600|±  |0.0499|
+|lighteval:mmlu_redux_2:logical_fallacies:0                  |       |pass@k_with_k|0.7500|±  |0.0435|
+|                                                            |       |acc          |0.6600|±  |0.0476|
+|lighteval:mmlu_redux_2:machine_learning:0                   |       |pass@k_with_k|0.5400|±  |0.0501|
+|                                                            |       |acc          |0.3700|±  |0.0485|
+|lighteval:mmlu_redux_2:management:0                         |       |pass@k_with_k|0.7500|±  |0.0435|
+|                                                            |       |acc          |0.6100|±  |0.0490|
+|lighteval:mmlu_redux_2:marketing:0                          |       |pass@k_with_k|0.8600|±  |0.0349|
+|                                                            |       |acc          |0.7600|±  |0.0429|
+|lighteval:mmlu_redux_2:medical_genetics:0                   |       |pass@k_with_k|0.7500|±  |0.0435|
+|                                                            |       |acc          |0.5700|±  |0.0498|
+|lighteval:mmlu_redux_2:miscellaneous:0                      |       |pass@k_with_k|0.8100|±  |0.0394|
+|                                                            |       |acc          |0.7300|±  |0.0446|
+|lighteval:mmlu_redux_2:moral_disputes:0                     |       |pass@k_with_k|0.6400|±  |0.0482|
+|                                                            |       |acc          |0.3800|±  |0.0488|
+|lighteval:mmlu_redux_2:moral_scenarios:0                    |       |pass@k_with_k|0.3600|±  |0.0482|
+|                                                            |       |acc          |0.2900|±  |0.0456|
+|lighteval:mmlu_redux_2:nutrition:0                          |       |pass@k_with_k|0.7000|±  |0.0461|
+|                                                            |       |acc          |0.6000|±  |0.0492|
+|lighteval:mmlu_redux_2:philosophy:0                         |       |pass@k_with_k|0.6500|±  |0.0479|
+|                                                            |       |acc          |0.4600|±  |0.0501|
+|lighteval:mmlu_redux_2:prehistory:0                         |       |pass@k_with_k|0.7200|±  |0.0451|
+|                                                            |       |acc          |0.5600|±  |0.0499|
+|lighteval:mmlu_redux_2:professional_accounting:0            |       |pass@k_with_k|0.5200|±  |0.0502|
+|                                                            |       |acc          |0.4500|±  |0.0500|
+|lighteval:mmlu_redux_2:professional_law:0                   |       |pass@k_with_k|0.3900|±  |0.0490|
+|                                                            |       |acc          |0.3400|±  |0.0476|
+|lighteval:mmlu_redux_2:professional_medicine:0              |       |pass@k_with_k|0.4700|±  |0.0502|
+|                                                            |       |acc          |0.5000|±  |0.0503|
+|lighteval:mmlu_redux_2:professional_psychology:0            |       |pass@k_with_k|0.6800|±  |0.0469|
+|                                                            |       |acc          |0.5300|±  |0.0502|
+|lighteval:mmlu_redux_2:public_relations:0                   |       |pass@k_with_k|0.6400|±  |0.0482|
+|                                                            |       |acc          |0.5900|±  |0.0494|
+|lighteval:mmlu_redux_2:security_studies:0                   |       |pass@k_with_k|0.6700|±  |0.0473|
+|                                                            |       |acc          |0.6300|±  |0.0485|
+|lighteval:mmlu_redux_2:sociology:0                          |       |pass@k_with_k|0.8300|±  |0.0378|
+|                                                            |       |acc          |0.6800|±  |0.0469|
+|lighteval:mmlu_redux_2:us_foreign_policy:0                  |       |pass@k_with_k|0.7400|±  |0.0441|
+|                                                            |       |acc          |0.5700|±  |0.0498|
+|lighteval:mmlu_redux_2:virology:0                           |       |pass@k_with_k|0.4900|±  |0.0502|
+|                                                            |       |acc          |0.3400|±  |0.0476|
+|lighteval:mmlu_redux_2:world_religions:0                    |       |pass@k_with_k|0.8200|±  |0.0386|
+|                                                            |       |acc          |0.7000|±  |0.0461|
+
+Program complete and files placed in -> /home/bjanson/projects/P1/LLaMA-Factory/logs
