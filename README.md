@@ -6,6 +6,9 @@
 
 See our final report here: https://github.com/rameyjm7/SFT-Training-LLM/blob/main/SFT%20Training%20LLM%20Project%20Report.pdf
 
+Follow the SFT of a LLaMa model here, where our team scored the top result
+https://github.com/reds-lab/Project-Reasoning-SFT-LLM
+
 ---
 
 ## Overview
