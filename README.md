@@ -1,4 +1,4 @@
-# 🧠 SFT-Training-LLM — Supervised Fine-Tuning of Qwen2.5-3B-Instruct
+# SFT-Training-LLM — Supervised Fine-Tuning of Qwen2.5-3B-Instruct
 
 **Course:** ECE5554 – Trustworthy Machine Learning | Fall 2025  
 **Team Members:** Mack Werner, Gary Ruppert, BJ Janson, Jacob Ramey*  
@@ -8,7 +8,7 @@ See our final report here: https://github.com/rameyjm7/SFT-Training-LLM/blob/mai
 
 ---
 
-## 📘 Overview
+## Overview
 
 This repository contains all code, configuration files, and analysis for **supervised fine-tuning (SFT)** of the **Qwen2.5-3B-Instruct** large language model to enhance reasoning performance.  
 The project demonstrates the full workflow from **baseline evaluation** through **fine-tuning**, followed by **quantitative comparison** across multiple reasoning benchmarks.
@@ -17,7 +17,7 @@ Our focus was to strengthen *multi-step mathematical and logical reasoning* with
 
 ---
 
-## 🚀 Objectives
+## Objectives
 
 - Evaluate the base **Qwen2.5-3B-Instruct** model on reasoning benchmarks using `lighteval`.
 - Fine-tune the model using the **AceReason-1.1-SFT** dataset.
@@ -26,7 +26,7 @@ Our focus was to strengthen *multi-step mathematical and logical reasoning* with
 
 ---
 
-## ⚙️ Baseline Configuration
+## Baseline Configuration
 
 The baseline model was evaluated using the following key parameters:
 
@@ -48,7 +48,7 @@ GPU_MEMORY_UTILIZATION=0.95
 
 ---
 
-## 📊 Baseline Results
+## Baseline Results
 
 | Task | Metric | Score ± stderr |
 |------|---------|----------------|
@@ -61,7 +61,7 @@ GPU_MEMORY_UTILIZATION=0.95
 
 ---
 
-## 🧩 Fine-Tuning Configuration
+## Fine-Tuning Configuration
 
 - **Dataset:** AceReason-1.1-SFT (15,000 samples)
 - **Epochs:** 7  
@@ -75,7 +75,7 @@ The fine-tuning process was executed via [LLaMA-Factory](https://github.com/hiyo
 
 ---
 
-## 📈 Fine-Tuned Evaluation Results
+## Fine-Tuned Evaluation Results
 
 | Task | Metric | Score ± stderr |
 |------|---------|----------------|
@@ -88,7 +88,7 @@ The fine-tuning process was executed via [LLaMA-Factory](https://github.com/hiyo
 
 ---
 
-## 🔍 Comparison of Results
+## Comparison of Results
 
 | Task | Baseline | Fine-Tuned | Δ (Change) |
 |------|-----------|-------------|-------------|
@@ -108,7 +108,7 @@ The fine-tuning process was executed via [LLaMA-Factory](https://github.com/hiyo
 
 ---
 
-## 🧠 Advanced Data Selection (LIMOPro)
+## Advanced Data Selection (LIMOPro)
 
 We explored the **LIMOPro** method (Large-scale Instruction-following Model based on Prompt-response Optimization) to optimize dataset selection.
 
@@ -120,14 +120,14 @@ Despite partial implementation, resource limitations prevented final integration
 
 ---
 
-## 🧾 Conclusion
+## Conclusion
 
 The supervised fine-tuning of Qwen2.5-3B-Instruct with the AceReason dataset improved reasoning and math performance while maintaining general and coding capabilities.  
 Although advanced data selection (LIMOPro) was not fully realized, the results confirm the potential of targeted SFT for improving reasoning-specific performance in mid-sized LLMs.
 
 ---
 
-## 🔗 Links
+## Links
 
 - **GitHub Repository:** [rameyjm7/SFT-Training-LLM](https://github.com/rameyjm7/SFT-Training-LLM)  
 - **HuggingFace Models:** [BJJ5555/ECE6514_models](https://huggingface.co/BJJ5555/ECE6514_models/tree/main)  
@@ -136,7 +136,7 @@ Although advanced data selection (LIMOPro) was not fully realized, the results c
 
 ---
 
-### 🧩 References
+### References
 
 - [GeeksForGeeks: Supervised Fine-Tuning (SFT) for LLMs](https://www.geeksforgeeks.org/artificial-intelligence/supervised-fine-tuning-sft-for-llms/)  
 - [HuggingFace TRL: SFT Trainer](https://huggingface.co/docs/trl/main/en/sft_trainer)  
